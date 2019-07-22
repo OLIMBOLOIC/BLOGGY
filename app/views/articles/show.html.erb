@@ -1,0 +1,35 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb rounded-0">
+    <%= link_to 'Retour', articles_path,class: "titre" %>
+  </ol>
+</nav>
+<div class="row">
+  <div class="col-md-4 img-show">
+    <%= image_tag(@article.image_url) %>
+  </div>
+  <div class="col-md-8">
+    <div class="card mb-3 rounded-0">
+      <div class="card-body">
+        <h5 class="card-title titre font-weight-bold text-decoration-none"> <%= @article.titre %></h5>
+        <hr>
+        <p class="card-text content"> <%= @article.contenu %>.</p>
+      </div>
+      <div class="card-footer text-right">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group titre">
+            <%= link_to like_article_path(@article),class: "btn btn-sm btn-outline-secondary rounded-0 content", method: :put do %>
+              <span class="glyphicon.glyphicon-heart" aria-hidden="true">Liker
+                <%= @article.get_upvotes.size %>
+              </span>
+              <% end %>
+              <% if utilisateur_signed_in? %>
+                <%= link_to 'Modifier', edit_article_path(@article),class: "btn btn-sm btn-outline-secondary rounded-0 content" %>
+                <%= link_to 'Detruire', @article,class: "btn btn-sm btn-outline-secondary rounded-0 content", method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+                <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

@@ -1,0 +1,10 @@
+<div class=" content p-3">
+  <%= simple_form_for @article, url: article do |f| %>
+    <%= f.error_notification %>
+    <%= f.collection_select :category_id, Category.all, :id, :nom,{ promt: 'Choisir une Catégorie'}, class: "mb-2 form-control w-25" %>
+    <%= f.input :titre %>
+    <%= f.input  :contenu %>
+    <%= f.input :image %>
+    <%= f.button :submit, class: "btn-outline-secondary rounded-0" %>
+  <% end %>
+</div>

@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="row">
+    <header class="blog-header py-2 bg-dark col-12 shadow">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4">
+          <%= link_to 'bLoGgY', root_path(@article), class:"blog-header-logo text-light font-weight-bold h2" %>
+        </div>
+        <div class="col-4 text-center">
+          <%= link_to 'POSTER UN ARTICLE', new_article_path, class:"btn btn btn-outline-light rounded-0 mr-1 titre font-weight-bold lead" %>
+        </div>
+        <div class="col-4 d-flex justify-content-end  font-weight-bold">
+          <% if utilisateur_signed_in? %>
+            <%= link_to current_utilisateur.email, edit_utilisateur_registration_path, class:"mr-3" %>
+            <%= link_to 'DÉCONNEXION',destroy_utilisateur_session_path, method: :delete, class:"btn btn-sm btn-outline-light rounded-0 mr-1 titre font-weight-bold lead" %>
+          <% else %>
+            <%= link_to "S'INSCRIRE", new_utilisateur_registration_path, class:"btn btn-sm btn-outline-light rounded-0 mr-1 titre font-weight-bold lead" %>
+            <%= link_to "CONNEXION", new_utilisateur_session_path, class:"btn btn-sm btn-outline-light rounded-0 mr-1 titre font-weight-bold lead" %>
+          <% end %>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>
+<div class="nav-scroller py-1 mb-2 col-6 offset-3 bg-light shadow-lg">
+  <nav class="nav d-flex justify-content-between titre font-weight-bold">
+    <% Category.all.each do |category| %>
+      <%= link_to category.nom, articles_path(category: category.nom), class:"mr-3 p-3 text-muted" %>
+    <% end %>
+  </nav>
+</div>

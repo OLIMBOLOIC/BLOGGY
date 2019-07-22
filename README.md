@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Pour le moment grace cette appli web:
+Poster des articles en :
+appelant une image 
+titrant l'article, définir la catégorie de l'article et en laissant du contenu et enfin publier...
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Telles sont les étapes du système de publication des articles sur cette appli web...

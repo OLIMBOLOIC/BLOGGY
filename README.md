@@ -1,6 +1,6 @@
 # README
 
-Pour le moment :
+Pour le moment grace cette appli web:
 Poster des articles en :
 appelant une image 
 titrant l'article, définir la catégorie de l'article et en laissant du contenu et enfin publier...
